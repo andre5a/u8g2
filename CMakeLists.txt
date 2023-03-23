@@ -33,6 +33,7 @@ set(COMPONENT_SRCS "csrc/u8x8_setup.c"
                     "csrc/u8x8_d_ssd1309.c"
                     "csrc/u8x8_byte.c"
                     "csrc/u8x8_d_ssd1607_200x200.c"
+                    "csrc/u8x8_d_ssd1681_200x200.c"
                     "csrc/u8x8_d_pcd8544_84x48.c"
                     "csrc/u8log.c"
                     "csrc/u8x8_d_sh1107.c"
@@ -98,3 +99,6 @@ else()
     target_include_directories(u8g2 PUBLIC ${CMAKE_CURRENT_LIST_DIR}/csrc )
 endif()
 
+
+
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-unused-variable")
